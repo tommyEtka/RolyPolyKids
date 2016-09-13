@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Outdoor</title>
+<title>Exploration Activities</title>
+
 <style>
 body {
 		background-image:url("https://source.unsplash.com/random");
@@ -13,6 +14,6 @@ body {
 
 </head>
 <body>
-<h1> Welcome to outdoor activities! </h1>
+<h1> Welcome to exploration activities! </h1>
 </body>
 </html>

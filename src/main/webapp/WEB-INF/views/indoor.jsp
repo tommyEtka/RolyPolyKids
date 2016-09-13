@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Outdoor</title>
+<title>Indoor Activities</title>
 <style>
 body {
 		background-image:url("https://source.unsplash.com/random");
 }
 </style>
-
 </head>
+
 <body>
-<h1> Welcome to outdoor activities! </h1>
+<h1> Welcome to indoor activities. </h1>
 </body>
 </html>

@@ -38,12 +38,25 @@ public class HomeController {
 
 		return "home";
 	}
-
 	@RequestMapping(value = "outdoor", method = RequestMethod.GET)
 
-	public String processForm(HttpServletRequest request, Model model) {
+	public String processOutdoor(HttpServletRequest request, Model model) {
 
 		return "outdoor";
+	}
+	
+	@RequestMapping(value = "indoor", method = RequestMethod.GET)
+
+	public String processIndoor(HttpServletRequest request, Model model) {
+
+		return "indoor";
+	}
+	
+	@RequestMapping(value = "explore", method = RequestMethod.GET)
+
+	public String processExplore(HttpServletRequest request, Model model) {
+
+		return "explore";
 	}
 }
 // @RequestMapping(value = "myForm", method = RequestMethod.GET)
