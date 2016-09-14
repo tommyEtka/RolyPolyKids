@@ -21,7 +21,12 @@
    <version>5.1.6</version>
     <scope>compile</scope>
    </dependency>
-	
+	<!-- client -->
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5.1</version>
+		</dependency>
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>

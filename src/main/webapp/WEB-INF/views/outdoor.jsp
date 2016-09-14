@@ -8,11 +8,13 @@
 <style>
 body {
 		background-image:url("https://source.unsplash.com/random");
+		
 }
 </style>
 
 </head>
 <body>
 <h1> Welcome to outdoor activities! </h1>
+${pageData}
 </body>
 </html>
