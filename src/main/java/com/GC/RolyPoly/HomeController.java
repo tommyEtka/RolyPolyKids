@@ -61,6 +61,7 @@ public class HomeController {
 			//https://www.pinterest.com/parkerlondonr/sample/
 			HttpHost host = new HttpHost("www.pinterest.com", 443, "https");
 			//HttpGet getPage = new HttpGet("/parkerlondonr/Sample.rss");
+			//HttpGet getPage = new HttpGet("/parkerlondonr/indoorcraftsage3to6.rss");
 			HttpGet getPage = new HttpGet("/parkerlondonr/feed.rss");
 			// execute the http request and get the http response
 			HttpResponse resp = http.execute(host, getPage);
