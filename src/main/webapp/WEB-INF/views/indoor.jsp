@@ -5,14 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Indoor Activities</title>
-<style>
-body {
-		background-image:url("https://source.unsplash.com/random");
-}
-</style>
+
 </head>
 
 <body>
 <h1> Welcome to indoor activities. </h1>
+
+
+<a href =  "recipes"> Recipes </a>
+<br>
+<a href =  "crafts"> Crafts </a>
+<br>
+<a href =  "scienceExperiments"> Science Experiments </a>
+<br>
+
 </body>
 </html>

@@ -62,7 +62,7 @@ public class HomeController {
 			HttpHost host = new HttpHost("www.pinterest.com", 443, "https");
 			//HttpGet getPage = new HttpGet("/parkerlondonr/Sample.rss");
 			//HttpGet getPage = new HttpGet("/parkerlondonr/indoorcraftsage3to6.rss");
-			HttpGet getPage = new HttpGet("/parkerlondonr/feed.rss");
+			HttpGet getPage = new HttpGet("/parkerlondonr/outdooractivities.rss");
 			// execute the http request and get the http response
 			HttpResponse resp = http.execute(host, getPage);
 			
@@ -95,10 +95,51 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "indoor", method = RequestMethod.GET)
-
 	public String processIndoor(HttpServletRequest request, Model model) {
-
 		return "indoor";
+	}
+	
+	@RequestMapping(value = "crafts", method = RequestMethod.GET)
+
+	public String processCrafts(HttpServletRequest request, Model model) {
+		try{
+			// create object type httpClient call http
+			HttpClient http = HttpClientBuilder.create().build();
+			//https://www.pinterest.com/<username>/<board>.rss
+			//https://www.pinterest.com/parkerlondonr/sample/
+			HttpHost host = new HttpHost("www.pinterest.com", 443, "https");
+			//HttpGet getPage = new HttpGet("/parkerlondonr/Sample.rss");
+			//HttpGet getPage = new HttpGet("/parkerlondonr/indoorcraftsage3to6.rss");
+			HttpGet getPage = new HttpGet("/parkerlondonr/indoorcraftsage3to6.rss");
+			// execute the http request and get the http response
+			HttpResponse resp = http.execute(host, getPage);
+			
+			//Way to display data using DOM(document object model) tree format
+			String result = "";
+			String xmlString = EntityUtils.toString(resp.getEntity());
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = factory.newDocumentBuilder();
+			InputSource inStream = new InputSource();
+			inStream.setCharacterStream(new StringReader(xmlString));
+			Document doc = db.parse(inStream);
+			String weatherForeCast = "empty";
+			NodeList nl = doc.getElementsByTagName("description");
+
+			//System.out.println("BeforeLoop "+ nl.getLength());
+			for (int i = 1; i < nl.getLength(); i++) {
+			    System.out.println("inLoop "+ nl.item(i).getFirstChild().getNodeValue().trim());
+				org.w3c.dom.Element nameElement = (org.w3c.dom.Element) nl.item(i);
+				weatherForeCast = nameElement.getFirstChild().getNodeValue().trim();
+				result += ( weatherForeCast );
+			}
+			model.addAttribute("pageData", result);
+		}
+		catch(Exception e)
+		{
+			model.addAttribute("Error", e.getMessage());
+			return "errorpage";
+		}
+		return "crafts";
 	}
 	
 	@RequestMapping(value = "explore", method = RequestMethod.GET)
@@ -107,14 +148,14 @@ public class HomeController {
 
 		return "explore";
 	}
-	@RequestMapping(value="feedPins", method = RequestMethod.GET)
-	public String getPinInfo1(Model model){
+	@RequestMapping(value="recipes", method = RequestMethod.GET)
+	public String getRecipes(Model model){
 		try{
 			// create object type httpClient call http
 			HttpClient http = HttpClientBuilder.create().build();
 			//https://www.pinterest.com/<username>/<board>.rss
 			HttpHost host = new HttpHost("www.pinterest.com", 443, "https");
-			HttpGet getPage = new HttpGet("/RolyPolyKids/Sample.rss");
+			HttpGet getPage = new HttpGet("/parkerlondonr/recipes.rss");
 		
 			// execute the http request and get the http response
 			HttpResponse resp = http.execute(host, getPage);
@@ -145,8 +186,51 @@ public class HomeController {
 			return "errorpage";
 		}
 		
-		return "outdoor";
+		return "recipePage";
 	}
+	
+	@RequestMapping(value="scienceExperiments", method = RequestMethod.GET)
+	public String getScienceInfo(Model model){
+		try{
+			// create object type httpClient call http
+			HttpClient http = HttpClientBuilder.create().build();
+			//https://www.pinterest.com/<username>/<board>.rss
+			HttpHost host = new HttpHost("www.pinterest.com", 443, "https");
+			HttpGet getPage = new HttpGet("/parkerlondonr/ScienceExperiments.rss");
+		
+			// execute the http request and get the http response
+			HttpResponse resp = http.execute(host, getPage);
+			
+			//Way to display data using DOM(document object model) tree format
+			String result = "";
+			String xmlString = EntityUtils.toString(resp.getEntity());
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = factory.newDocumentBuilder();
+			InputSource inStream = new InputSource();
+			inStream.setCharacterStream(new StringReader(xmlString));
+			Document doc = db.parse(inStream);
+			String weatherForeCast = "empty";
+			NodeList nl = doc.getElementsByTagName("description");
+
+			//System.out.println("BeforeLoop "+ nl.getLength());
+			for (int i = 1; i < nl.getLength(); i++) {
+			    System.out.println("inLoop "+ nl.item(i).getFirstChild().getNodeValue().trim());
+				org.w3c.dom.Element nameElement = (org.w3c.dom.Element) nl.item(i);
+				weatherForeCast = nameElement.getFirstChild().getNodeValue().trim();
+				result += ( weatherForeCast );
+			}
+			model.addAttribute("pageData", result);
+		}
+		catch(Exception e)
+		{
+			model.addAttribute("Error", e.getMessage());
+			return "errorpage";
+		}
+		
+		return "scienceExperiments";
+	}
+	
+	
 }
 // @RequestMapping(value = "myForm", method = RequestMethod.GET)
 // public String processForm() {
