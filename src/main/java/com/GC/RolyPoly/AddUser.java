@@ -19,7 +19,7 @@ public class AddUser {
 	public String signup(HttpServletRequest request,Model model){
 		String selectCommand;
 		String firstName,lastName,email,passwd;
-		
+		boolean isValid = true;
 		firstName = request.getParameter("firstName");
 		lastName = request.getParameter("lastName");
 		email = request.getParameter("email");
@@ -31,15 +31,23 @@ public class AddUser {
 			//store the info to the DB orders
 			Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolypolykids","root","vsmith38282");
 			//command
-			if (firstName == null||firstName.isEmpty()
-				||lastName == null||lastName.isEmpty()||
-				email == null||email.isEmpty() ||
-				passwd == null||passwd.isEmpty()){
+			if (firstName.isEmpty()||
+				lastName.isEmpty()||
+				email.isEmpty() ||
+				passwd.isEmpty()){
+				isValid = false;
+			}else if (firstName.equals("") && lastName.equals("") ){
+				isValid = false;
+			}
+			//if (firstName.)
+			
+			if (false){
 				model.addAttribute("warning","All fields are mandatory. Please try again.");
 				return "signup";
 			}
 			else
 			{
+				
 				selectCommand = "insert into Users (firstName,lastName,email,password) values(?,?,?,?)";
 				//create statement
 				  PreparedStatement ps = cnn.prepareStatement(selectCommand);

@@ -5,6 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style>
+input[type=text],[type=password] {
+width: 35%;
+height: 34px;
+padding-left: 5px;
+margin-bottom: 20px;
+margin-top: 8px;
+box-shadow: 0 0 5px #00F5FF;
+border: 2px solid #00F5FF;
+color: #4f4f4f;
+font-size: 16px;
+}
+</style>
 </head>
 <body>
 <form action="signupsubmit" method="post">
@@ -13,7 +26,7 @@ ${warning}
 First Name: <input type="text" name="firstName" ><br>
 Last Name: <input type="text" name="lastName" ><br>
 Email:&nbsp &nbsp <input type="text" name="email" ><br>
-Password:<input type="text" name="passwd" ><br>
+Password:<input type="password" name="passwd" ><br>
 <br>
 <br>
 <br>
