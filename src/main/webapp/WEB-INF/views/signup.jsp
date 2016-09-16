@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="signup" method="get">
+<form action="signupsubmit" method="post">
 ${warning}
 <h1>Soon we will have a log in screen</h1><br>
 First Name: <input type="text" name="firstName" ><br>

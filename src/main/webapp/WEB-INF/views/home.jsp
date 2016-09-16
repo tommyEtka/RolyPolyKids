@@ -12,8 +12,9 @@ body {
 </head>
 <body>
 <h1>ROLY POLY KIDS:</h1>
-<h2>fun educational activities for ages 0-10</h2>
+<h2>fun educational activities for ages 0-10</h2> <a href =  "login">Login </a>&nbsp &nbsp &nbsp <a href =  "signupsubmit">Sign Up </a>&nbsp &nbsp &nbsp<a href =  "logout">Log out </a>
 <br>
+
 <h2>
 Welcome! What do you want to do today?
 </h2>
