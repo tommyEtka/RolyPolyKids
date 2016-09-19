@@ -73,6 +73,7 @@ background: linear-gradient(#36caf0 5%, #22abe9 100%);
 <script type="text/javascript" src="login.js"></script>
 </head>
 <body>
+<h1>${warning}</h1>
 <div class="container">
 <div class="main">
 <form class="form" action="loginPage" method="post" >
@@ -85,6 +86,7 @@ background: linear-gradient(#36caf0 5%, #22abe9 100%);
 </form>
 </div>
 </div>
+
 </body>
 </html>
 

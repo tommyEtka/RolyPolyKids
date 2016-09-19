@@ -31,18 +31,9 @@ public class AddUser {
 			//store the info to the DB orders
 			Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolypolykids","root","vsmith38282");
 			//command
-			if (firstName.isEmpty()||
-				lastName.isEmpty()||
-				email.isEmpty() ||
-				passwd.isEmpty()){
-				isValid = false;
-			}else if (firstName.equals("") && lastName.equals("") ){
-				isValid = false;
-			}
-			//if (firstName.)
-			
-			if (false){
-				model.addAttribute("warning","All fields are mandatory. Please try again.");
+			isValid = validateFlds(model, firstName, lastName, email, passwd);
+			if (!isValid){
+				//model.addAttribute("warning","All fields are mandatory. Please try again.");
 				return "signup";
 			}
 			else
@@ -72,6 +63,43 @@ public class AddUser {
 		
 	}
 
+
+	/**
+	 
+	 * @param firstName
+	 * @param lastName
+	 * @param email
+	 * @param passwd
+	 */
+	public boolean validateFlds(Model model, String firstName, String lastName, String email, String passwd) {
+		boolean isValid = true;
+		if (firstName.isEmpty()||
+			lastName.isEmpty()||
+			email.isEmpty() ||
+			passwd.isEmpty()){
+			isValid = false;
+		}else if (firstName.equals("") && lastName.equals("") ){
+			isValid = false;
+		}
+		if (firstName.matches("[0-9]+")){
+			//model.addAttribute("warning","FirstName is not a numeric field. Please try again.");
+			isValid = false;
+		}
+		if (lastName.matches("[0-9]+")){
+			//model.addAttribute("warning","LastName is not a numeric field. Please try again.");
+			isValid = false;
+		}
+		if (email.matches("[0-9]+")){
+			//model.addAttribute("warning","email can not be all numeric characters.Please try again.");
+			isValid = false;
+		}
+		if (passwd.matches("[0-9]+")){
+			//model.addAttribute("warning","The password should be a mix of Number and Alphabet characters.Please try again.");
+			isValid = false;
+		}
+		return isValid;
+	}
+
 	
 	@RequestMapping(value = "signup")
 	public String signupdir(){
@@ -86,11 +114,12 @@ public class AddUser {
 		String selectCommand;
 		String email;
 		String passwd;
+		String pwd = "";
 		ResultSet rs;
 		email = request.getParameter("demail");
 		passwd= request.getParameter("password");
-		System.out.println("You made it in the method :" +email);
-		System.out.println("You made it in the method :" +passwd);
+		//System.out.println("You made it in the method :" +email);
+		//System.out.println("You made it in the method :" +passwd);
 		 try {
 			//load driver for mysql
 			 Class.forName("com.mysql.jdbc.Driver");
@@ -103,21 +132,29 @@ public class AddUser {
 			  }
 			  else
 			  {
-				  selectCommand = "select * from users where email = ?";
+				  
+				  selectCommand = "select * from users where email = ? and password= ?";
 				//create statement
 				  PreparedStatement ps = cnn.prepareStatement(selectCommand);
 				  ps.setString(1,email);
+				  ps.setString(2,passwd);
 				// use ps to execute the command
 				   rs = ps.executeQuery(); 
 				   
 			  }
 			 
+			 if(!rs.first()){
+				 model.addAttribute("warning","You have entered the wrong email address/password. Please try again.");
+				 return "login";
+			 }
+
+
 			 
 			  //prepare data and send back to view
 			 boolean hasData = false;
-			 System.out.println("Before session");
+			 //System.out.println("Before session");
 			 hasData= rs.first();
-			 System.out.println("has data " + hasData);
+			 //System.out.println("has data " + hasData);
 			  if(hasData){
 				  session.setAttribute("log", true);
 				  System.out.println("session set");
