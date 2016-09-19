@@ -2,6 +2,7 @@ package com.GC.RolyPoly;
 
 //ROLY POLY HOME CONTROLLER
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 import java.io.StringReader;
@@ -122,17 +123,37 @@ public class HomeController {
 			InputSource inStream = new InputSource();
 			inStream.setCharacterStream(new StringReader(xmlString));
 			Document doc = db.parse(inStream);
-			String weatherForeCast = "empty";
+			
 			NodeList nl = doc.getElementsByTagName("description");
+			
+			//we need to add more nodelists?
+			NodeList linkNode = doc.getElementsByTagName("link");
+			NodeList titleNode = doc.getElementsByTagName("title");
+			//NodeList imageNode = doc.getElementsByTagName("img src");
+			
+			
+String craftChoice = "";
+String link="";
+String title="";
+ArrayList<CraftInfo> list = new ArrayList<CraftInfo>();
 
 			//System.out.println("BeforeLoop "+ nl.getLength());
 			for (int i = 1; i < nl.getLength(); i++) {
 			    System.out.println("inLoop "+ nl.item(i).getFirstChild().getNodeValue().trim());
 				org.w3c.dom.Element nameElement = (org.w3c.dom.Element) nl.item(i);
-				weatherForeCast = nameElement.getFirstChild().getNodeValue().trim();
-				result += ( weatherForeCast );
+				org.w3c.dom.Element linkElement = (org.w3c.dom.Element) linkNode.item(i);
+				org.w3c.dom.Element titleElement = (org.w3c.dom.Element) titleNode.item(i);
+				craftChoice = nameElement.getFirstChild().getNodeValue().trim();
+				link = linkElement.getFirstChild().getNodeValue().trim();
+				title = titleElement.getFirstChild().getNodeValue().trim();
+				
+				
+				list.add(new CraftInfo(link,craftChoice,title));
+				result += ( craftChoice );
 			}
 			model.addAttribute("pageData", result);
+			model.addAttribute("craftData", list);
+			
 		}
 		catch(Exception e)
 		{
