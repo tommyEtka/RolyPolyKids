@@ -1,0 +1,261 @@
+@CHARSET "ISO-8859-1";
+@import url(http://fonts.googleapis.com/css?family=Kameron);
+
+@import 'https://fonts.googleapis.com/css?family=Sansita+One';
+
+ .navbar {
+
+    margin-bottom: 0;
+
+    background-color: white;
+
+    border: 0;
+
+    font-size: 11px !important;
+
+    font-family: 'Kameron';
+
+    letter-spacing: 4px;
+
+    opacity:0.9;
+
+}
+
+/* Add a gray color to all navbar links */
+
+.navbar li a, .navbar .navbar-brand { 
+
+    color: #666156 !important;
+
+}
+
+/* On hover, the links will turn orange */
+
+.navbar-nav li a:hover {
+
+    color: #f28500 !important;
+
+}
+
+/* The active link */
+
+.navbar-nav li.active a {
+
+    color: #f28500 !important;
+
+    background-color:#29292c !important;
+
+}
+
+/* Remove border color from the collapsible button */
+
+.navbar-default .navbar-toggle {
+
+    border-color: transparent;
+
+}
+
+.jumbotron h1 {
+
+    color: #8FB31D;
+
+  font-size: px;
+
+    font-weight: bold;
+
+       }
+
+.person {
+
+    border: 10px solid transparent;
+
+    margin-bottom: 25px;
+
+    width: 80%;
+
+    height: 80%;
+
+    opacity: 0.7;
+
+}
+
+h1 {
+
+ 
+
+  top: 17%; 
+
+  left: 0%;
+
+  font-family: 'Sansita one', serif;
+
+  color: #94b001;
+
+  font-size: 80px;
+
+}
+
+h2 {
+
+  top: 20%;
+
+color: white;
+
+  font-family: 'Kameron'
+
+}
+
+h3 {
+
+  font-family: 'Kameron';
+
+ color: #f28500;
+
+}
+
+p {
+
+    font-family: 'Kameron', serif;
+
+}
+
+body {
+
+    font-family: 'Kameron'
+
+    font-weight: 300;
+
+    font-size: 112.5%;
+
+    line-height: 1.4;
+
+    background: url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/green_dust_scratch.png) #909ca2;
+
+}
+
+background: url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/green_dust_scratch.png) #909ca2;
+
+}
+
+    
+
+div {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+}
+
+.btn {
+
+    background: #113546;
+
+    
+
+    color: white;
+
+    display: inline-block;
+
+    padding: 0.2rem 0.5rem;
+
+    margin: 0.5rem;
+
+    position: relative;
+
+    border-radius: 3px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition: all 0.1s ease-in-out;
+
+    
+
+    &:hover {
+
+        background: #021f2c;
+
+        color: #fff;
+
+        
+
+        &:after {
+
+            border-color: #021f2c;
+
+        }
+
+    }
+
+    
+
+    &:after {
+
+        content: '';
+
+        display: inline-block;
+
+        position: absolute;
+
+        left: -0.5rem;
+
+        top: -0.5rem;
+
+        width: calc(100% + (1rem));
+
+        height: calc(100% + (1rem));
+
+        z-index: -1;
+
+        border: 0.375rem solid #113546;
+
+        border-radius: 10px;
+
+        background: linear-gradient(45deg,
+
+                    #ec5f67, #f99157, #fac863, #99c794,
+
+                    #5fb3b3, #6699cc, #c594c5); 
+
+        box-sizing: inherit;
+
+    }
+
+    
+
+    &:active:after {
+
+        box-shadow: inset 0 0 0.5rem #000;
+
+    }
+
+  .person {
+
+    border: 10px solid transparent;
+
+    margin-bottom: 25px;
+
+    width: 80%;
+
+    height: 80%;
+
+    opacity: 0.7;
+
+}
+
+.person:hover {
+
+    border-color: #f1f1f1;
+
+}
+
+}
+

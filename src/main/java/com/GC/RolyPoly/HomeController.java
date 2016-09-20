@@ -50,7 +50,7 @@ public class HomeController {
 
 		model.addAttribute("serverTime", formattedDate);
 
-		return "home";
+		return "loginHome";
 	}
 	@RequestMapping(value = "outdoor", method = RequestMethod.GET)
 
