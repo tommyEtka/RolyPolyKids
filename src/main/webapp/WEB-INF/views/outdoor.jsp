@@ -5,16 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Outdoor</title>
-<style>
-body {
-		background-image:url("https://source.unsplash.com/random");
-		
-}
-</style>
+
 
 </head>
 <body>
 <h1> Welcome to outdoor activities! </h1>
+
 ${pageData}
+
+<br>
+<h2>Add to favorites: </h2>
+Obstacle course: <input type="checkbox" id="www.obstaclecourse.com" name="ObstacleCourse">
+Mars Mission: <input type="checkbox" id="www.marsmission.com" name="MarsMission">
+Ice Block Treasure Hunt: <input type="checkbox" id="www.iceblock.com" name="IceBlock">
+
 </body>
 </html>
