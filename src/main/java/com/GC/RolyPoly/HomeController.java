@@ -82,7 +82,7 @@ public class HomeController {
 
 		model.addAttribute("serverTime", formattedDate);
 
-		return "loginHome";
+		return "home";
 
 	}
 
@@ -146,7 +146,7 @@ public class HomeController {
 				
 				favoritesTag = parseFavsFrom(outdoorInfo);
 				
-				result += outdoorInfo + favoritesTag + "<br>";
+				result += outdoorInfo + "&nbsp&nbsp&nbsp&nbsp&nbsp<a href='addFavorite?pin="+favoritesTag+"'>Add To Favorites</a>" + "<br>";
 				
 				
 				
