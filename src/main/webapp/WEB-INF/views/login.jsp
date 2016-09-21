@@ -83,6 +83,8 @@ background: linear-gradient(#36caf0 5%, #22abe9 100%);
 <label>Password :</label>
 <input type="password" name="password" id="password">
 <input type="submit" name="login" id="login" value="Login" >
+<p>Sign up if you are not a member</p>
+<a href="signup">Sign up</a>
 </form>
 </div>
 </div>

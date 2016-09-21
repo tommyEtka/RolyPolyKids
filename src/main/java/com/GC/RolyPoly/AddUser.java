@@ -1,5 +1,6 @@
 package com.GC.RolyPoly;
 
+import java.io.StringReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,11 +8,22 @@ import java.sql.ResultSet;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.apache.http.HttpHost;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
 @Controller
 public class AddUser {
@@ -156,7 +168,9 @@ public class AddUser {
 			 hasData= rs.first();
 			 //System.out.println("has data " + hasData);
 			  if(hasData){
-				  session.setAttribute("log", true);
+				  HttpSession session1 = request.getSession();
+				  session1.setAttribute("email", email);
+				  session1.setAttribute("log", true);
 				  System.out.println("session set");
 				  
 			 }
@@ -187,5 +201,8 @@ public class AddUser {
             
         }
 
+	
+
+	
 
 }
