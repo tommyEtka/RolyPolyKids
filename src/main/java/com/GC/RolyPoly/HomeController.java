@@ -298,6 +298,13 @@ public class HomeController {
 		return "explore";
 
 	}
+	
+	@RequestMapping(value = "contact", method = RequestMethod.GET)
+
+	public String processContact(HttpServletRequest request, Model model) {
+
+		return "contact";
+	}
 
 	@RequestMapping(value = "recipes", method = RequestMethod.GET)
 
