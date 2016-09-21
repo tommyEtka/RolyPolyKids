@@ -59,9 +59,12 @@
 
 .jumbotron h1 {
 
-    color: #8FB31D;
+        
+   color: #94b001;
+   
+   font-family: 'Sansita one', serif;
 
-  font-size: px;
+  	font-size: px;
 
     font-weight: bold;
 
@@ -80,7 +83,7 @@ h1 {
 
   font-family: 'Sansita one', serif;
 
-  color: #94b001;
+  font-color: #8FB31D;
 
   font-size: 80px;
 
@@ -90,7 +93,7 @@ h2 {
 
   top: 20%;
 
-color: white;
+	color: white;
 
   font-family: 'Kameron'
 
@@ -107,7 +110,7 @@ h3 {
 p {
 
     font-family: 'Kameron', serif;
-     font-kmcolor: #666156;
+     color: #666156;
     
 
 }
@@ -118,7 +121,7 @@ body {
 
     font-weight: 300;
     
-     font-color: #666156
+     color: #666156;
 
     font-size: 112.5%;
 

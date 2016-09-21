@@ -299,11 +299,11 @@ public class HomeController {
 
 	}
 	
-	@RequestMapping(value = "contact", method = RequestMethod.GET)
+	@RequestMapping(value = "contacts", method = RequestMethod.GET)
 
 	public String processContact(HttpServletRequest request, Model model) {
 
-		return "contact";
+		return "contacts";
 	}
 
 	@RequestMapping(value = "recipes", method = RequestMethod.GET)

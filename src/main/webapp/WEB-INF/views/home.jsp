@@ -23,9 +23,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="indoor">Indoor</a></li>
-        <li><a href="indoor">Outdoor</a></li>
-        <li><a href="indoor">Explore</a></li>
-        <li><a href="contact">Contact</a></li>
+        <li><a href="ourdoor">Outdoor</a></li>
+        <li><a href="explore">Explore</a></li>
+        <li><a href="contacts">Contact</a></li>
 
       </ul>
       
