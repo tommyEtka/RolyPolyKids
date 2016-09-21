@@ -1,23 +1,78 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ page session="false" %>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Indoor Activities</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <spring:url value="/resources/main.css"  var="mainCss"/>
+  <link href="${mainCss}"  rel="stylesheet"/>
+ 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet"
+ 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+ 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+ 	crossorigin="anonymous">
 </head>
 
 <body>
-<h1> Welcome to indoor activities. </h1>
-
-
-<a href =  "recipes"> Recipes </a>
-<br>
-<a href =  "crafts"> Crafts </a>
-<br>
-<a href =  "scienceExperiments"> Science Experiments </a>
-<br>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="indoor">Indoor</a></li>
+        <li><a href="indoor">Outdoor</a></li>
+        <li><a href="indoor">Explore</a></li>
+        <li><a href="contact">Contact</a></li>
+         </ul>
+        </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+     <h1> Welcome to indoor activities. </h1>
+  </div>
+  </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Recipes</h3>
+      <img src= "recipes.jgp" class="img-circle person" alt="recipes">
+      <a class = "btn" href =  "recipes"> Recipes </a>
+      <p>Kid friendly recipes for your budding chef.</p>
+       </div>
+    <div class="col-sm-4">
+      <h3>Science Experiments</h3>
+      
+      <img src="science.jpg" class="img-circle person" alt="ScienceExperiments">
+      <a class="btn" href= "scienceExperiments"> Science Experiments </a> 
+      <p>Have a mad scientist on your hands? Keep them encouraged! </p>
+      
+    </div>
+    <div class="col-sm-4">
+      
+      <h3>Crafts</h3> 
+      
+      <img src="crafty.jpg" class="img-circle person" alt="Crafty">
+      <a class = "btn" href =  "crafts"> GO EXPLORE </a>
+      <p>Let's make some fun together!</p>
+      </div>
+  </div>
+</div>
 
 </body>
+
 </html>
