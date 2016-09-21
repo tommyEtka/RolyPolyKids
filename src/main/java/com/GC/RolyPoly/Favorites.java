@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 //				//load driver for mysql
 //				 Class.forName("com.mysql.jdbc.Driver");
 //				//store the info to the DB orders
-//				Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolypolykids","scriblet","grandcircus123");
+//				Connection cnn = DriverManager.getConnection("jdbc:mysql://aa1s1uxliw4eyl2.c51rrraraa3j.us-west-2.rds.amazonaws.com:3306/rolypolykids","scriblet","123usert");
 //				//command
 //					selectCommand = "insert into user_favorites (pinId,description,useremail) values(?,?,?)";
 //					//create statement
