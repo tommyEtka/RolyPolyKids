@@ -29,7 +29,7 @@ public class AddUser {
 			//load driver for mysql
 			 Class.forName("com.mysql.jdbc.Driver");
 			//store the info to the DB orders
-			 Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolypolykids","scriblet","grandcircus123");
+			 Connection cnn = DriverManager.getConnection("jdbc:mysql://aa1s1uxliw4eyl2.c51rrraraa3j.us-west-2.rds.amazonaws.com:3306/rolypolykids","scriblet","123usert");
 			//command
 			isValid = validateFlds(model, firstName, lastName, email, passwd);
 			if (!isValid){
@@ -56,7 +56,7 @@ public class AddUser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			model.addAttribute("Error","Error encountered restart app");
-			return "errorPage";
+			return "errorpage";
 		}
 		
 		
@@ -124,7 +124,7 @@ public class AddUser {
 			//load driver for mysql
 			 Class.forName("com.mysql.jdbc.Driver");
 			//store the info to the DB orders
-			 Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolypolykids","scriblet","grandcircus123");
+			 Connection cnn = DriverManager.getConnection("jdbc:mysql://aa1s1uxliw4eyl2.c51rrraraa3j.us-west-2.rds.amazonaws.com:3306/rolypolykids","scriblet","123usert");
 			//command
 			if (email == null||email.isEmpty()|| passwd == null || passwd.isEmpty()){
 				model.addAttribute("warning","All fields are mandatory. Please try again.");
@@ -169,7 +169,7 @@ public class AddUser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			model.addAttribute("Error","Error encountered restart app");
-			return "errorPage";
+			return "errorpage";
 		}
 		
 		 
