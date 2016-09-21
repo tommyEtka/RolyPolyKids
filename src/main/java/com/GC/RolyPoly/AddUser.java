@@ -29,7 +29,7 @@ public class AddUser {
 			//load driver for mysql
 			 Class.forName("com.mysql.jdbc.Driver");
 			//store the info to the DB orders
-			Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolypolykids","root","vsmith38282");
+			 Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolypolykids","scriblet","grandcircus123");
 			//command
 			isValid = validateFlds(model, firstName, lastName, email, passwd);
 			if (!isValid){
@@ -124,7 +124,7 @@ public class AddUser {
 			//load driver for mysql
 			 Class.forName("com.mysql.jdbc.Driver");
 			//store the info to the DB orders
-			Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolypolykids","root","vsmith38282");
+			 Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolypolykids","scriblet","grandcircus123");
 			//command
 			if (email == null||email.isEmpty()|| passwd == null || passwd.isEmpty()){
 				model.addAttribute("warning","All fields are mandatory. Please try again.");
