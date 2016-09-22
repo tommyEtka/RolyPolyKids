@@ -39,6 +39,37 @@
   <div class="row">
     <div class="col-sm-12">
      <h1> Any questions? Please contact us! </h1>
+     
+      <table border=1>
+
+       <tr>
+                    <td>Team Member</td>
+              	 <td>Email</td>
+              	 </tr>
+              	 
+                    <tr>
+                    <td>Blair Brown</td>
+              	 <td>blair.jbrown@gmail.com</td>
+              	 </tr>
+              	 
+              	 <tr>
+              	 <td>Laurin Gracey-Parker</td>
+              	 <td>lauriniparker@gmail.com</td>
+              	 </tr>
+              	 
+              	 <tr>
+              	 <td>Valerie Smith</td>
+              	 <td>vsmith38282@gmail.com</td>
+              	 </tr>
+              	 
+              	 <tr>
+              	 <td>Tommy Thurman</td>
+              	 <td>thurma13@gmail.com</td>
+
+                </tr>
+            </table>   
+     
+     
   </div>
   </div>
   </div>

@@ -21,11 +21,10 @@ body {
 }
 </style>
 
-<spring:url value="/resources/main.css"  var="mainCss"/>
+  <spring:url value="/resources/main.css"  var="mainCss"/>
   <link href="${mainCss}"  rel="stylesheet"/>
- 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- </head>
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
