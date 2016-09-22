@@ -65,6 +65,11 @@ text-shadow: 0px 1px 0px #13506D;
 #login:hover{
 background: linear-gradient(#36caf0 5%, #22abe9 100%);
 }
+body {
+
+        background-image:url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/green_dust_scratch.png");
+
+}
 
 
 </style>
