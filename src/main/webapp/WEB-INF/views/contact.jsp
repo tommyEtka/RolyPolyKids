@@ -40,8 +40,9 @@
     <div class="col-sm-12">
      <h1> Any questions? Please contact us! </h1>
      
-     <table border=1>
-
+     <table border="1px" align="center">
+<br>
+<br>
   <tr>
                     <td>Team Members</td>
               	 <td>Email</td>

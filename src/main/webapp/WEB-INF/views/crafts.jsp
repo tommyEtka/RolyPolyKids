@@ -54,7 +54,7 @@
 
 
 
- <table border=1>
+ <table border="1px" align="center">
 
 <c:forEach var="craft" items="${craftData}">
                 <tr>

@@ -51,7 +51,8 @@
   </div>
   </div>
 <br>
-<table border=1>
+<table border="1px" align="center">
+
 <c:forEach var="rec" items="${recData}">
                 <tr>
                     <td><c:out value="${rec.getTitle()}"/><br><a href='addFavorite?pin=<c:out value="${rec.getFavoritesTag()}" />'> Add To Favorites </a></td>

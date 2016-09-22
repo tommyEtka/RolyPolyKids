@@ -47,7 +47,7 @@
 
 
 <br>
-<table border=1>
+<table border="1px" align="center">
 <c:forEach var="se" items="${seData}">
                 <tr>
                     <td><c:out value="${se.getTitle()}"/> <br> <a href='addFavorite?pin=<c:out value="${se.getFavoritesTag()}" />'> Add To Favorites </a></td>
