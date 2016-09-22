@@ -1,15 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ page session="false" %>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Science Experiment</title>
+<title>Contact Us</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <spring:url value="/resources/main.css"  var="mainCss"/>
   <link href="${mainCss}"  rel="stylesheet"/>
- 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
@@ -29,7 +30,7 @@
         <li><a href="indoor">Indoor</a></li>
         <li><a href="outdoor">Outdoor</a></li>
         <li><a href="explore">Explore</a></li>
-        <li><a href="contacts">Contact</a></li>
+        <li><a href="contact">Contact</a></li>
          </ul>
         </div>
   </div>
@@ -37,25 +38,11 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-    <br>
-    <br>
-    <br>
-<h2>Welcome to Science Experiments. </h2>
-</div>
+     <h1> Any questions? Please contact us! </h1>
   </div>
   </div>
-
-
-<br>
-<table border=1>
-<c:forEach var="se" items="${seData}">
-                <tr>
-                    <td><c:out value="${se.getTitle()}"/> <a href='addFavorite?pin=<c:out value="${se.getFavoritesTag()}" />'> Add To Favorites </a></td>
-              	 <td><a href='<c:out value="${se.getLink()}" />'> ${se.getImgSrc()} </a></td>
-
-                </tr>
-            </c:forEach>
-
-            </table>
+  </div>
+</body>
+</html>
 </body>
 </html>

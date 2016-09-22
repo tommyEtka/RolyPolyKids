@@ -30,7 +30,7 @@
         <li><a href="indoor">Indoor</a></li>
         <li><a href="outdoor">Outdoor</a></li>
         <li><a href="explore">Explore</a></li>
-        <li><a href="contacts">Contact</a></li>
+        <li><a href="contact">Contact</a></li>
          </ul>
         </div>
   </div>

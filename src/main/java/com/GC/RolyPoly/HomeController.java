@@ -195,6 +195,14 @@ public class HomeController {
 		return "indoor";
 
 	}
+	
+	@RequestMapping(value = "contact", method = RequestMethod.GET)
+
+	public String processContact(HttpServletRequest request, Model model) {
+
+		return "contact";
+
+	}
 
 	@RequestMapping(value = "crafts", method = RequestMethod.GET)
 
@@ -311,12 +319,6 @@ public class HomeController {
 
 	}
 	
-	@RequestMapping(value = "contacts", method = RequestMethod.GET)
-
-	public String processContact(HttpServletRequest request, Model model) {
-
-		return "contacts";
-	}
 
 //updated
 	private String parseRecImg(String recImg) {
