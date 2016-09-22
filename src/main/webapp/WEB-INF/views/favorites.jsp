@@ -3,11 +3,25 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ page session="false" %>
+
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ 
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Outdoor</title>
+
+<link href="https://fonts.googleapis.com/css?family=Kameron" rel="stylesheet">
+    
+    
+<link rel="stylesheet" href="resources/test/css/style.css">
+        
+<style>
+body {
+		background-image:url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/green_dust_scratch.png");
+}
+</style>
 <spring:url value="/resources/main.css"  var="mainCss"/>
   <link href="${mainCss}"  rel="stylesheet"/>
  
@@ -38,11 +52,42 @@ ${alert}
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-<h1> Great, you have successfully saved to your favorites list </h1>
+
+
 </div>
   </div>
   </div>
 
+<br> 
+
+
+<div class="cards_wrapper">
+  <div class="card unfolded today">
+    <div class="card_description">
+      <div class="date"></div>
+      <div class="title">FAVORITES</div>
+    </div>
+    <div class="alarm_item top">
+      <div class="time_block">
+        <!--  <div class="time">12:00</div>
+      </div>
+      <div class="day_part">PM</div>
+      <div  class="alarm_item_description"> -->
+
+      <a href="http://goexplorenature.com/2010/05/fun-friday-build-roly-poly-terrarium.html">RolyPolyHome</a>
+       
+      <!--   <p>Metro Parent hosts its annual Education Expo to give families the chance to see what academic and extracurricular options are here in southeast Michigan for kids. </p> <p>Cranbrook Institute of Science, 39221 Woodward Ave., Bloomfield Hills </p> --> 
+        </div>
+    </div>
+
+      </div>
+    </div>
+  </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+        <script src="resources/test/js/index.js"></script>
+
+  </body>
 
 
 <br>
