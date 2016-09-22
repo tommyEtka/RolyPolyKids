@@ -36,10 +36,25 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-<h2> Welcome to Science Experiments. </h2>
+    <br>
+    <br>
+    <br>
+<h2>Welcome to Science Experiments. </h2>
 </div>
   </div>
   </div>
-${pageData}
+
+
+<br>
+<table border=1>
+<c:forEach var="se" items="${seData}">
+                <tr>
+                    <td><c:out value="${se.getTitle()}"/></td>
+              	 <td><a href='<c:out value="${se.getLink()}" />'> ${se.getImgSrc()} </a></td>
+
+                </tr>
+            </c:forEach>
+
+            </table>
 </body>
 </html>

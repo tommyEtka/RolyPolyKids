@@ -172,10 +172,20 @@ public class HomeController {
 	}
 
 	private String parseFavsFrom(String outdoorInfo) {
-		int beginIndex =14;
-		int endIndex=32;
-		return outdoorInfo.substring(beginIndex,endIndex);
-		
+		int beginIndex = 14;
+		int endIndex = 32;
+		return outdoorInfo.substring(beginIndex, endIndex);
+
+	}
+
+	// this is for crafts
+	private String parseImg(String craftImg) {
+		// int beginIndex = craftImg.indexOf("&lt");
+		// int endIndex= craftImg.lastIndexOf("/a&gt");
+		int beginIndex = craftImg.indexOf("http");
+		int endIndex = craftImg.lastIndexOf("\"");
+		return craftImg.substring(beginIndex, endIndex);
+
 	}
 
 	@RequestMapping(value = "indoor", method = RequestMethod.GET)
@@ -215,7 +225,10 @@ public class HomeController {
 
 			// Way to display data using DOM(document object model) tree format
 
+			String craftImg = "";
+			String getCraftImg = "";
 			String result = "";
+			String result2 = "";
 
 			String xmlString = EntityUtils.toString(resp.getEntity());
 
@@ -231,8 +244,6 @@ public class HomeController {
 
 			NodeList nl = doc.getElementsByTagName("description");
 
-			// we need to add more nodelists?
-
 			NodeList linkNode = doc.getElementsByTagName("link");
 
 			NodeList titleNode = doc.getElementsByTagName("title");
@@ -240,10 +251,9 @@ public class HomeController {
 			// NodeList imageNode = doc.getElementsByTagName("img src");
 
 			String craftChoice = "";
-
 			String link = "";
-
 			String title = "";
+			String imgSrc = "";
 
 			ArrayList<CraftInfo> list = new ArrayList<CraftInfo>();
 
@@ -255,9 +265,13 @@ public class HomeController {
 
 				org.w3c.dom.Element nameElement = (org.w3c.dom.Element) nl.item(i);
 
+				craftImg = nameElement.getFirstChild().getNodeValue().trim();
+
 				org.w3c.dom.Element linkElement = (org.w3c.dom.Element) linkNode.item(i);
 
 				org.w3c.dom.Element titleElement = (org.w3c.dom.Element) titleNode.item(i);
+
+				imgSrc = getCraftImg = "<img src=" + "\"" + parseImg(craftImg) + "\"" + "/img>";
 
 				craftChoice = nameElement.getFirstChild().getNodeValue().trim();
 
@@ -265,15 +279,17 @@ public class HomeController {
 
 				title = titleElement.getFirstChild().getNodeValue().trim();
 
-				list.add(new CraftInfo(link, craftChoice, title));
+				list.add(new CraftInfo(link, getCraftImg, title));
 
 				result += (craftChoice);
+				result2 += (getCraftImg);
 
 			}
 
 			model.addAttribute("pageData", result);
 
 			model.addAttribute("craftData", list);
+			model.addAttribute("craftImage", result2);
 
 		}
 
@@ -290,6 +306,20 @@ public class HomeController {
 		return "crafts";
 
 	}
+	
+	@RequestMapping(value = "contacts", method = RequestMethod.GET)
+
+	public String processContact(HttpServletRequest request, Model model) {
+
+		return "contacts";
+	}
+
+
+	private String parseRecImg(String recImg) {
+		int beginIndex = recImg.indexOf("http");
+		int endIndex = recImg.lastIndexOf("\"");
+		return recImg.substring(beginIndex, endIndex);
+	}
 
 	@RequestMapping(value = "explore", method = RequestMethod.GET)
 
@@ -297,13 +327,6 @@ public class HomeController {
 
 		return "explore";
 
-	}
-	
-	@RequestMapping(value = "contacts", method = RequestMethod.GET)
-
-	public String processContact(HttpServletRequest request, Model model) {
-
-		return "contacts";
 	}
 
 	@RequestMapping(value = "recipes", method = RequestMethod.GET)
@@ -328,7 +351,10 @@ public class HomeController {
 
 			// Way to display data using DOM(document object model) tree format
 
+			String recImg = "";
+			String getRecImg = "";
 			String result = "";
+			String result2 = "";
 
 			String xmlString = EntityUtils.toString(resp.getEntity());
 
@@ -346,7 +372,17 @@ public class HomeController {
 
 			NodeList nl = doc.getElementsByTagName("description");
 
-			// System.out.println("BeforeLoop "+ nl.getLength());
+			NodeList linkNode = doc.getElementsByTagName("link");
+
+			NodeList titleNode = doc.getElementsByTagName("title");
+
+
+			String recChoice = "";
+			String link = "";
+			String title = "";
+			String imgSrc = "";
+
+			ArrayList<RecipesInfo> list = new ArrayList<RecipesInfo>();
 
 			for (int i = 1; i < nl.getLength(); i++) {
 
@@ -354,15 +390,33 @@ public class HomeController {
 
 				org.w3c.dom.Element nameElement = (org.w3c.dom.Element) nl.item(i);
 
-				weatherForeCast = nameElement.getFirstChild().getNodeValue().trim();
+				recImg = nameElement.getFirstChild().getNodeValue().trim();
 
-				result += (weatherForeCast);
+				org.w3c.dom.Element linkElement = (org.w3c.dom.Element) linkNode.item(i);
+
+				org.w3c.dom.Element titleElement = (org.w3c.dom.Element) titleNode.item(i);
+
+				imgSrc = getRecImg = "<img src=" + "\"" + parseRecImg(recImg) + "\"" + "/img>";
+
+				recChoice = nameElement.getFirstChild().getNodeValue().trim();
+
+				link = linkElement.getFirstChild().getNodeValue().trim();
+
+				title = titleElement.getFirstChild().getNodeValue().trim();
+
+				list.add(new RecipesInfo(link, getRecImg, title));
+
+				result += (recChoice);
+				result2 += (getRecImg);
 
 			}
 
 			model.addAttribute("pageData", result);
+			model.addAttribute("recData", list);
+			model.addAttribute("recImage", result2);
 
 		}
+
 
 		catch (Exception e)
 
@@ -376,6 +430,13 @@ public class HomeController {
 
 		return "recipePage";
 
+	}
+
+
+	private String parseSEImg(String seImg) {
+		int beginIndex = seImg.indexOf("http");
+		int endIndex = seImg.lastIndexOf("\"");
+		return seImg.substring(beginIndex, endIndex);
 	}
 
 	@RequestMapping(value = "scienceExperiments", method = RequestMethod.GET)
@@ -400,7 +461,10 @@ public class HomeController {
 
 			// Way to display data using DOM(document object model) tree format
 
+			String seImg = "";
+			String getSEImg = "";
 			String result = "";
+			String result2 = "";
 
 			String xmlString = EntityUtils.toString(resp.getEntity());
 
@@ -417,8 +481,17 @@ public class HomeController {
 			String weatherForeCast = "empty";
 
 			NodeList nl = doc.getElementsByTagName("description");
+			NodeList linkNode = doc.getElementsByTagName("link");
+			NodeList titleNode = doc.getElementsByTagName("title");
 
-			// System.out.println("BeforeLoop "+ nl.getLength());
+
+			String seChoice = "";
+			String link = "";
+			String title = "";
+			String imgSrc = "";
+
+			ArrayList<SEInfo> list = new ArrayList<SEInfo>();
+
 
 			for (int i = 1; i < nl.getLength(); i++) {
 
@@ -426,15 +499,33 @@ public class HomeController {
 
 				org.w3c.dom.Element nameElement = (org.w3c.dom.Element) nl.item(i);
 
-				weatherForeCast = nameElement.getFirstChild().getNodeValue().trim();
+				seImg = nameElement.getFirstChild().getNodeValue().trim();
 
-				result += (weatherForeCast);
+				org.w3c.dom.Element linkElement = (org.w3c.dom.Element) linkNode.item(i);
+
+				org.w3c.dom.Element titleElement = (org.w3c.dom.Element) titleNode.item(i);
+
+				imgSrc = getSEImg = "<img src=" + "\"" + parseSEImg(seImg) + "\"" + "/img>";
+
+				seChoice = nameElement.getFirstChild().getNodeValue().trim();
+
+				link = linkElement.getFirstChild().getNodeValue().trim();
+
+				title = titleElement.getFirstChild().getNodeValue().trim();
+
+				list.add(new SEInfo(link, getSEImg, title));
+
+				result += (seChoice);
+				result2 += (getSEImg);
 
 			}
 
 			model.addAttribute("pageData", result);
+			model.addAttribute("seData", list);
+			model.addAttribute("seImage", result2);
 
 		}
+
 
 		catch (Exception e)
 
@@ -447,6 +538,7 @@ public class HomeController {
 		}
 
 		return "scienceExperiments";
+
 
 	}
 

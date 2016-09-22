@@ -40,22 +40,32 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
+    <br>
+    <br>
+    <br>
 <h2> Welcome to crafts. </h2>
 </div>
   </div>
   </div>
+  <br>
 
-<table border=1>
+
+
+
+ <table border=1>
 
 <c:forEach var="craft" items="${craftData}">
                 <tr>
                     <td><c:out value="${craft.getTitle()}"/></td>
-               <!--     <td><c:out value="${craft.getLink()}" /></td> -->  
-                    <td><a href='<c:out value="${craft.getLink()}" />'> ${craft.getLink()} </a></td>
-                  
+               <!--<td><c:out value="${craft.getLink()}" /></td>  -->
+              	<!-- <td><c:out value="${craft.getImgSrc()}"/></td> -->
+              	 <td><a href='<c:out value="${craft.getLink()}" />'> ${craft.getImgSrc()} </a></td>
+               <!--<td><a href='<c:out value="${craft.getImgSrc()}" />'> ${craft.getLink()} </a></td>-->
+
                 </tr>
             </c:forEach>
             </table>
 
+      <!--    ${craftImage}  -->
 </body>
 </html>
