@@ -52,7 +52,7 @@
 <table border=1>
 <c:forEach var="rec" items="${recData}">
                 <tr>
-                    <td><c:out value="${rec.getTitle()}"/><a href='addFavorite?pin=<c:out value="${rec.getFavoritesTag()}" />'> Add To Favorites </a></td>
+                    <td><c:out value="${rec.getTitle()}"/><br><a href='addFavorite?pin=<c:out value="${rec.getFavoritesTag()}" />'> Add To Favorites </a></td>
                <!--<td><c:out value="${craft.getLink()}" /></td>  -->
               	<!-- <td><c:out value="${craft.getImgSrc()}"/></td> -->
               	 <td><a href='<c:out value="${rec.getLink()}" />'> ${rec.getImgSrc()} </a></td>

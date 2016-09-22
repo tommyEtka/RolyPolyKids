@@ -52,7 +52,7 @@
 
 <c:forEach var="outdoor" items="${outdoorData}">
                 <tr>
-                    <td><c:out value="${outdoor.getTitle()}"/><a href='addFavorite?pin=<c:out value="${outdoor.getFavoritesTag()}" />'> Add To Favorites </a></td>
+                    <td><c:out value="${outdoor.getTitle()}"/> <br> <a href='addFavorite?pin=<c:out value="${outdoor.getFavoritesTag()}" />'> Add To Favorites </a></td>
               	 <td><a href='<c:out value="${outdoor.getLink()}" />'> ${outdoor.getImgSrc()} </a></td>
 
                 </tr>

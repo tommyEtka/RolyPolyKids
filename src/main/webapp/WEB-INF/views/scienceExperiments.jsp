@@ -50,7 +50,7 @@
 <table border=1>
 <c:forEach var="se" items="${seData}">
                 <tr>
-                    <td><c:out value="${se.getTitle()}"/> <a href='addFavorite?pin=<c:out value="${se.getFavoritesTag()}" />'> Add To Favorites </a></td>
+                    <td><c:out value="${se.getTitle()}"/> <br> <a href='addFavorite?pin=<c:out value="${se.getFavoritesTag()}" />'> Add To Favorites </a></td>
               	 <td><a href='<c:out value="${se.getLink()}" />'> ${se.getImgSrc()} </a></td>
 
                 </tr>
