@@ -5,6 +5,7 @@ public class SEInfo {
     private String link;
     private String imgSrc;
     private String title;
+    private String favoritesTag;
 	public String getLink() {
 		return link;
 	}
@@ -23,11 +24,18 @@ public class SEInfo {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public SEInfo(String link, String imgSrc, String title) {
+	public String getFavoritesTag() {
+		return favoritesTag;
+	}
+	public void setFavoritesTag(String favoritesTag) {
+		this.favoritesTag = favoritesTag;
+	}
+	public SEInfo(String link, String imgSrc, String title,String favoritesTag) {
 		super();
 		this.link = link;
 		this.imgSrc = imgSrc;
 		this.title = title;
+		this.favoritesTag = favoritesTag;
 	}
 	public SEInfo(String link, String imgSrc) {
 		super();

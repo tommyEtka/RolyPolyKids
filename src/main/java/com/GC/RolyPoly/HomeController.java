@@ -359,7 +359,7 @@ public class HomeController {
 			String getRecImg = "";
 			String result = "";
 			String result2 = "";
-
+			
 			String xmlString = EntityUtils.toString(resp.getEntity());
 
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -385,7 +385,8 @@ public class HomeController {
 			String link = "";
 			String title = "";
 			String imgSrc = "";
-
+			String favoritesTag = "";
+			String addFav ="";
 			ArrayList<RecipesInfo> list = new ArrayList<RecipesInfo>();
 
 			for (int i = 1; i < nl.getLength(); i++) {
@@ -407,8 +408,10 @@ public class HomeController {
 				link = linkElement.getFirstChild().getNodeValue().trim();
 
 				title = titleElement.getFirstChild().getNodeValue().trim();
-
-				list.add(new RecipesInfo(link, getRecImg, title));
+				//get pin id to save favorite
+				favoritesTag = parseFavsFrom(recChoice);
+				System.out.println("Is fav null? :"+favoritesTag);
+				list.add(new RecipesInfo(link, getRecImg, title,favoritesTag));
 
 				result += (recChoice);
 				result2 += (getRecImg);
@@ -493,7 +496,8 @@ public class HomeController {
 			String link = "";
 			String title = "";
 			String imgSrc = "";
-
+			String favoritesTag = "";
+			String addFav ="";
 			ArrayList<SEInfo> list = new ArrayList<SEInfo>();
 
 
@@ -516,8 +520,9 @@ public class HomeController {
 				link = linkElement.getFirstChild().getNodeValue().trim();
 
 				title = titleElement.getFirstChild().getNodeValue().trim();
-
-				list.add(new SEInfo(link, getSEImg, title));
+				//get pin id to save favorite
+				favoritesTag = parseFavsFrom(seChoice);
+				list.add(new SEInfo(link, getSEImg, title,favoritesTag));
 
 				result += (seChoice);
 				result2 += (getSEImg);
