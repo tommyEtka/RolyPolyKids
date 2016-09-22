@@ -1,0 +1,125 @@
+
+$animation_duration: 0.6s
+$alarm_item_height: 200px
+$alarm_item_perspective: 100px
+$alarm_item_rotate: 10deg
+$white_color: #fff
+$white_opacity_color: rgba(255, 255, 255, .8)
+$yellow_color: #ffb300
+$orange_color: #EF6C00
+$blue_color: #03a9f4
+$gray_color: #798384
+$purple_color: #EE82EE
+
+body
+  background-color: $gray_color
+  
+
+.cards_wrapper
+  font-family: 'Kameron', sans-serif
+
+.card
+  width: 650px
+  margin: 0 auto 10px
+  cursor: pointer
+  .card_description
+    border-radius: 5px
+    height: 140px
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    transition: border-radius $animation_duration ease-in-out
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .2)
+    .date,
+    .title
+      color: rgba(255, 255, 255, .8)
+      font-size: 38px
+    .date
+      margin: 0 80px 0 20px
+  &.today
+    .card_description
+      background-color: slateblue
+      
+  &.tomorrow
+    .card_description
+      background-color: #FFCC00
+
+.card.unfolded
+  .top
+    animation: unfold_top $animation_duration ease-in-out
+  .bottom
+    animation: unfold_bottom $animation_duration ease-in-out
+  .card_description
+    border-radius: 5px 5px 0 0
+      
+.card.folded
+  .top
+    animation: fold_top $animation_duration forwards ease-in-out
+  .bottom
+    animation: fold_bottom $animation_duration forwards ease-in-out
+      
+.top,
+.bottom
+  position: relative
+  overflow: hidden
+  height: $alarm_item_height
+  background-color: $white_color
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, .2)
+  
+.bottom
+  border-radius: 0 0 5px 5px
+  
+.alarm_item
+  display: flex
+  align-items: center
+  .time_block
+    margin-left: 20px
+  .day_part
+    font-size: 10px
+    margin: 0 25px 0 5px
+    color: $gray_color
+  .time
+    padding: 10px
+    border-radius: 3px
+    color: #fff
+    background-color: slateblue
+  .alarm_item_description
+    color: $gray_color
+  
+@keyframes fold_top
+  100%
+    transform-origin: top
+    transform: perspective($alarm_item_perspective) rotateX(-$alarm_item_rotate)
+    height: 0
+  
+@keyframes fold_bottom
+  100%
+    transform-origin: bottom
+    transform: perspective($alarm_item_perspective) rotateX($alarm_item_rotate)
+    height: 0
+  
+@keyframes unfold_top
+  0%
+    transform-origin: top
+    height: 0
+    transform: perspective($alarm_item_perspective) rotateX(-$alarm_item_rotate)
+  100%
+    transform: perspective($alarm_item_perspective) rotateX(0deg)
+    height: $alarm_item_height
+  
+@keyframes unfold_bottom
+  0%
+    transform-origin: bottom
+    height: 0
+    transform: perspective($alarm_item_perspective) rotateX($alarm_item_rotate)
+  100%
+    transform: perspective($alarm_item_perspective) rotateX(0deg)
+    height: $alarm_item_height
+  
+  
+  
+  
+  
+  
+  
+  
