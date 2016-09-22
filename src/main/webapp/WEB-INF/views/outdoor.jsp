@@ -38,12 +38,26 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
+  <br>
+    <br>
+    <br>
+
+
 <h1> Welcome to outdoor activities! </h1>
 </div>
   </div>
   </div>
 
-${pageData}
+  <table border=1>
+
+<c:forEach var="outdoor" items="${outdoorData}">
+                <tr>
+                    <td><c:out value="${outdoor.getTitle()}"/><a href='addFavorite?pin=<c:out value="${outdoor.getFavoritesTag()}" />'> Add To Favorites </a></td>
+              	 <td><a href='<c:out value="${outdoor.getLink()}" />'> ${outdoor.getImgSrc()} </a></td>
+
+                </tr>
+            </c:forEach>
+            </table>
 
 <br>
 

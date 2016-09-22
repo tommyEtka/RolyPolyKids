@@ -115,7 +115,10 @@ public class HomeController {
 
 			// Way to display data using DOM(document object model) tree format
 
+			String outdoorImg = "";
+			String getOutdoorImg = "";
 			String result = "";
+			String result2 = "";
 
 			String xmlString = EntityUtils.toString(resp.getEntity());
 
@@ -134,7 +137,19 @@ public class HomeController {
 
 			NodeList nl = doc.getElementsByTagName("description");
 
+			NodeList linkNode = doc.getElementsByTagName("link");
+
+			NodeList titleNode = doc.getElementsByTagName("title");
+
 			// System.out.println("BeforeLoop "+ nl.getLength());
+
+			String outdoorChoice = "";
+			String link = "";
+			String title = "";
+			String imgSrc = "";
+			String addFav ="";
+
+			ArrayList<OutdoorInfo> list = new ArrayList<OutdoorInfo>();
 
 			for (int i = 1; i < nl.getLength(); i++) {
 
@@ -142,18 +157,42 @@ public class HomeController {
 
 				org.w3c.dom.Element nameElement = (org.w3c.dom.Element) nl.item(i);
 
+				outdoorImg = nameElement.getFirstChild().getNodeValue().trim();
+
+				org.w3c.dom.Element linkElement = (org.w3c.dom.Element) linkNode.item(i);
+
+				org.w3c.dom.Element titleElement = (org.w3c.dom.Element) titleNode.item(i);
+
+				imgSrc = getOutdoorImg = "<img src=" + "\"" + parseOutdoorImg(outdoorImg) + "\"" + "/img>";
+
+				outdoorChoice = nameElement.getFirstChild().getNodeValue().trim();
+
+				link = linkElement.getFirstChild().getNodeValue().trim();
+
+				title = titleElement.getFirstChild().getNodeValue().trim();
+
+
+
+
 				outdoorInfo = nameElement.getFirstChild().getNodeValue().trim();
-				
-				favoritesTag = parseFavsFrom(outdoorInfo);
-				
-				result += outdoorInfo + "&nbsp&nbsp&nbsp&nbsp&nbsp<a href='addFavorite?pin="+favoritesTag+"'>Add To Favorites</a>" + "<br>";
-				
-				
-				
-				
+
+				favoritesTag = parseOutdoorImg(outdoorImg);
+
+				result += outdoorImg + "&nbsp&nbsp&nbsp&nbsp&nbsp<a href='addFavorite?pin="+favoritesTag+"'>Add To Favorites</a>" + "<br>";
+
+				list.add(new OutdoorInfo(link, getOutdoorImg, title, favoritesTag));
+
+				result += (outdoorChoice);
+				result2 += (getOutdoorImg);
+
+
+
+
 			}
 
 			model.addAttribute("pageData", result);
+			model.addAttribute("outdoorData", list);
+			model.addAttribute("outdoorImage", result2);
 
 		}
 
@@ -175,6 +214,12 @@ public class HomeController {
 		int beginIndex = 14;
 		int endIndex = 32;
 		return outdoorInfo.substring(beginIndex, endIndex);
+
+	}
+	private String parseOutdoorImg(String outdoorImg) {
+		int beginIndex = outdoorImg.indexOf("http");
+		int endIndex = outdoorImg.lastIndexOf("\"");
+		return outdoorImg.substring(beginIndex, endIndex);
 
 	}
 
