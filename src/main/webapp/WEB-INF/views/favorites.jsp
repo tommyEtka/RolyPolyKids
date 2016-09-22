@@ -40,6 +40,7 @@ body {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+      <li><a href="home">Home</a></li>
         <li><a href="indoor">Indoor</a></li>
         <li><a href="outdoor">Outdoor</a></li>
         <li><a href="explore">Explore</a></li>

@@ -11,7 +11,8 @@
 <title>Recipes</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Science Experiment</title>
-<link href="${mainCss}"  rel="stylesheet"/>
+  <spring:url value="/resources/main.css"  var="mainCss"/>
+  <link href="${mainCss}"  rel="stylesheet"/>
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
