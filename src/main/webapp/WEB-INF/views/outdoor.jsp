@@ -48,7 +48,7 @@
   </div>
   </div>
 
-  <table border=1>
+  <table border="1px" align="center">
 
 <c:forEach var="outdoor" items="${outdoorData}">
                 <tr>
