@@ -61,7 +61,7 @@
     <div class="col-sm-4">
         <h3>Crafts</h3> 
        <img class="img-responsive" src="resources/images/crafts.jpeg" class="img-circle person" alt="Indoor">
-      <a class = "btn" href =  "crafts"> CRAFTS </a>
+      <a class = "btn" href =  "crafts"> Crafts </a>
       <p>Let's make some fun together!</p>
       </div>
   </div>

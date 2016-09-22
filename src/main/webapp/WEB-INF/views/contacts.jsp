@@ -43,7 +43,7 @@
       <table border=1>
 
        <tr>
-                    <td>Team Member</td>
+                    <td>Team Members</td>
               	 <td>Email</td>
               	 </tr>
               	 
