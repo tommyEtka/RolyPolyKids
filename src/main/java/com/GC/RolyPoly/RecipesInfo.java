@@ -5,6 +5,7 @@ public class RecipesInfo {
     private String link;
     private String imgSrc;
     private String title;
+    private String favoritesTag;
 	public String getLink() {
 		return link;
 	}
@@ -23,11 +24,20 @@ public class RecipesInfo {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public RecipesInfo(String link, String imgSrc, String title) {
+	public String getFavoritesTag() {
+		System.out.println("get fav is:"+ favoritesTag);
+		return favoritesTag;
+	}
+	public void setFavoritesTag(String favoritesTag) {
+		this.favoritesTag = favoritesTag;
+	}
+	public RecipesInfo(String link, String imgSrc, String title,String favoritesTag) {
 		super();
 		this.link = link;
 		this.imgSrc = imgSrc;
 		this.title = title;
+		System.out.println("fav is:"+ favoritesTag);
+		this.favoritesTag = favoritesTag;
 	}
 	public RecipesInfo(String link, String imgSrc) {
 		super();
