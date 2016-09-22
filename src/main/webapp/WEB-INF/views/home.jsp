@@ -22,8 +22,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="home">Home</a><li>
         <li><a href="indoor">Indoor</a></li>
-        <li><a href="ourdoor">Outdoor</a></li>
+        <li><a href="outdoor">Outdoor</a></li>
         <li><a href="explore">Explore</a></li>
         <li><a href="contacts">Contact</a></li>
 
@@ -54,25 +55,21 @@ Welcome! How do you want to play today?
     <div class="row">
       <div class="col-sm-4">
         <h3>Indoor</h3>
-
-        <img src="https://hd.unsplash.com/photo-1453749024858-4bca89bd9edc.jpg" class="img-circle person" alt="Indoor">
+		<img class="img-responsive" src="resources/images/indoorCrafts.jpeg" class="img-circle person" alt="Indoor">
         <a class="btn" href="indoor"> INDOOR </a>
         <p>Feeling crafty? What about a great science experiment? Caution: great ideas inside!</p>
 
       </div>
       <div class="col-sm-4">
         <h3>Outdoor</h3>
-
-        <img src="/resources/Images/outdoor.jpeg" class="img-circle person" alt="Outdoor">
+		<img class="img-responsive" src="resources/images/outdoor2.jpeg" class="img-circle person" alt="Outdoor">
         <a class="btn" href="outdoor"> OUTDOOR </a>
         <p>Want to go outside to play? We have the best activities for your child's development level. </p>
 
       </div>
       <div class="col-sm-4">
-
         <h3>Go Explore</h3>
-
-        <img src="/resources/Images/outdoor/bandmember.jpg" class="img-circle person" alt="Explored">
+        <img class="img-responsive" src="resources/images/go explore.jpeg" class="img-circle person" alt="Explored">
         <a class="btn" href="explore"> GO EXPLORE </a>
         <p>What's going on in your neighborhood? Get our and explore your world with local events. </p>
       </div>

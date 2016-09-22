@@ -47,24 +47,20 @@
   <div class="row">
     <div class="col-sm-4">
       <h3>Recipes</h3>
-      <img src= "recipes.jgp" class="img-circle person" alt="recipes">
+      <img class="img-responsive" src="resources/images/recipes.jpeg" class="img-circle person" alt="Indoor">
       <a class = "btn" href =  "recipes"> Recipes </a>
       <p>Kid friendly recipes for your budding chef.</p>
        </div>
     <div class="col-sm-4">
       <h3>Science Experiments</h3>
-      
-      <img src="science.jpg" class="img-circle person" alt="ScienceExperiments">
+      <img class="img-responsive" src="resources/images/science.jpeg" class="img-circle person" alt="Indoor">
       <a class="btn" href= "scienceExperiments"> Science Experiments </a> 
       <p>Have a mad scientist on your hands? Keep them encouraged! </p>
-      
-    </div>
+        </div>
     <div class="col-sm-4">
-      
-      <h3>Crafts</h3> 
-      
-      <img src="crafty.jpg" class="img-circle person" alt="Crafty">
-      <a class = "btn" href =  "crafts"> GO EXPLORE </a>
+        <h3>Crafts</h3> 
+       <img class="img-responsive" src="resources/images/crafts.jpeg" class="img-circle person" alt="Indoor">
+      <a class = "btn" href =  "crafts"> CRAFTS </a>
       <p>Let's make some fun together!</p>
       </div>
   </div>

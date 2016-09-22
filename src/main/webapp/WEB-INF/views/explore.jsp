@@ -4,7 +4,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ page session="false" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <link href="${mainCss}"  rel="stylesheet"/>
@@ -27,6 +27,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="home">Home</a></li>
         <li><a href="indoor">Indoor</a></li>
         <li><a href="indoor">Outdoor</a></li>
         <li><a href="indoor">Explore</a></li>
