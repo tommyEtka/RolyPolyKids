@@ -496,7 +496,8 @@ public class HomeController {
 			String link = "";
 			String title = "";
 			String imgSrc = "";
-
+			String favoritesTag = "";
+			String addFav ="";
 			ArrayList<SEInfo> list = new ArrayList<SEInfo>();
 
 
@@ -519,8 +520,9 @@ public class HomeController {
 				link = linkElement.getFirstChild().getNodeValue().trim();
 
 				title = titleElement.getFirstChild().getNodeValue().trim();
-
-				list.add(new SEInfo(link, getSEImg, title));
+				//get pin id to save favorite
+				favoritesTag = parseFavsFrom(seChoice);
+				list.add(new SEInfo(link, getSEImg, title,favoritesTag));
 
 				result += (seChoice);
 				result2 += (getSEImg);
