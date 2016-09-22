@@ -318,7 +318,7 @@ public class HomeController {
 		return "contacts";
 	}
 
-
+//updated
 	private String parseRecImg(String recImg) {
 		int beginIndex = recImg.indexOf("http");
 		int endIndex = recImg.lastIndexOf("\"");
