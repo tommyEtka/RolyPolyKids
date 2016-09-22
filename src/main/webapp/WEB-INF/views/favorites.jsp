@@ -38,12 +38,12 @@ ${alert}
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-<h1> Welcome to outdoor activities! </h1>
+<h1> Great, you have successfully saved to your favorites list </h1>
 </div>
   </div>
   </div>
 
-${pageData}
+
 
 <br>
 

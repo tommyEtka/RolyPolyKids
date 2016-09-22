@@ -51,7 +51,7 @@ public class AddUser {
 			else
 			{
 				
-				selectCommand = "insert into Users (firstName,lastName,email,password) values(?,?,?,?)";
+				selectCommand = "insert into users (firstName,lastName,email,password) values(?,?,?,?)";
 				//create statement
 				  PreparedStatement ps = cnn.prepareStatement(selectCommand);
 				  ps.setString(1, firstName);

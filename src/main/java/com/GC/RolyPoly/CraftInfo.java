@@ -3,6 +3,7 @@ public class CraftInfo {
     private String link;
     private String imgSrc;
     private String title;
+    private String favoritesTag;
     public String getLink() {
         return link;
     }
@@ -21,11 +22,19 @@ public class CraftInfo {
     public void setTitle(String title) {
         this.title = title;
     }
-    public CraftInfo(String link, String imgSrc, String title) {
+    
+    public String getFavoritesTag() {
+		return favoritesTag;
+	}
+	public void setFavoritesTag(String favoritesTag) {
+		this.favoritesTag = favoritesTag;
+	}
+	public CraftInfo(String link, String imgSrc, String title,String favoritesTag) {
         super();
         this.link = link;
         this.imgSrc = imgSrc;
         this.title = title;
+        this.favoritesTag = favoritesTag;
     }
     // not sure if we need this one?
     public CraftInfo(String link, String imgSrc) {

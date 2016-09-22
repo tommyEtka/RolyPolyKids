@@ -254,7 +254,8 @@ public class HomeController {
 			String link = "";
 			String title = "";
 			String imgSrc = "";
-
+			String favoritesTag = "";
+			String addFav ="";
 			ArrayList<CraftInfo> list = new ArrayList<CraftInfo>();
 
 			// System.out.println("BeforeLoop "+ nl.getLength());
@@ -278,9 +279,12 @@ public class HomeController {
 				link = linkElement.getFirstChild().getNodeValue().trim();
 
 				title = titleElement.getFirstChild().getNodeValue().trim();
-
-				list.add(new CraftInfo(link, getCraftImg, title));
-
+				//get pin id to save favorite
+				favoritesTag = parseFavsFrom(craftChoice);
+				//add link format to show favorite link
+				//addFav =  "<a href='addFavorite?pin="+favoritesTag+"'>Add To Favorites</a>";
+				list.add(new CraftInfo(link, getCraftImg, title,favoritesTag));
+				
 				result += (craftChoice);
 				result2 += (getCraftImg);
 
