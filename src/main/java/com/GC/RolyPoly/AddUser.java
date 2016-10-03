@@ -40,7 +40,7 @@ public class AddUser {
 		 try {
 			//load driver for mysql
 			 Class.forName("com.mysql.jdbc.Driver");
-			//store the info to the DB orders
+			//store the info to the DB orders- changed db psw
 			 Connection cnn = DriverManager.getConnection("jdbc:mysql://aa1s1uxliw4eyl2.c51rrraraa3j.us-west-2.rds.amazonaws.com:3306/rolypolykids","scuytuyriblet","12kjhkjh3usert");
 			//command
 			isValid = validateFlds(model, firstName, lastName, email, passwd);
