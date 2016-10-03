@@ -28,6 +28,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+      <li><a href="home">Home</a></li>
         <li><a href="indoor">Indoor</a></li>
         <li><a href="outdoor">Outdoor</a></li>
         <li><a href="explore">Explore</a></li>
@@ -60,7 +61,7 @@
     <div class="col-sm-4">
         <h3>Crafts</h3> 
        <img class="img-responsive" src="resources/images/crafts.jpeg" class="img-circle person" alt="Indoor">
-      <a class = "btn" href =  "crafts"> CRAFTS </a>
+      <a class = "btn" href =  "crafts"> Crafts </a>
       <p>Let's make some fun together!</p>
       </div>
   </div>

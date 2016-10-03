@@ -11,7 +11,8 @@
 <title>Recipes</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Science Experiment</title>
-<link href="${mainCss}"  rel="stylesheet"/>
+  <spring:url value="/resources/main.css"  var="mainCss"/>
+  <link href="${mainCss}"  rel="stylesheet"/>
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
@@ -27,10 +28,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+      <li><a href="home">Home</a></li>
         <li><a href="indoor">Indoor</a></li>
         <li><a href="outdoor">Outdoor</a></li>
         <li><a href="explore">Explore</a></li>
-        <li><a href="contacts">Contact</a></li>
+        <li><a href="contact">Contact</a></li>
          </ul>
         </div>
   </div>
@@ -49,7 +51,8 @@
   </div>
   </div>
 <br>
-<table border=1>
+<table border="1px" align="center">
+
 <c:forEach var="rec" items="${recData}">
                 <tr>
                     <td><c:out value="${rec.getTitle()}"/><br><a href='addFavorite?pin=<c:out value="${rec.getFavoritesTag()}" />'> Add To Favorites </a></td>

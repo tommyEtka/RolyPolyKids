@@ -11,6 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Crafts</title>
 <title>Science Experiment</title>
+  <spring:url value="/resources/main.css"  var="mainCss"/>
   <link href="${mainCss}"  rel="stylesheet"/>
  
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -53,7 +54,7 @@
 
 
 
- <table border=1>
+ <table border="1px" align="center">
 
 <c:forEach var="craft" items="${craftData}">
                 <tr>

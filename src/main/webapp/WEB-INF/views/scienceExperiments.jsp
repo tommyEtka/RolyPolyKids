@@ -8,8 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Science Experiment</title>
+   <spring:url value="/resources/main.css"  var="mainCss"/>
   <link href="${mainCss}"  rel="stylesheet"/>
- 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
@@ -47,7 +47,7 @@
 
 
 <br>
-<table border=1>
+<table border="1px" align="center">
 <c:forEach var="se" items="${seData}">
                 <tr>
                     <td><c:out value="${se.getTitle()}"/> <br> <a href='addFavorite?pin=<c:out value="${se.getFavoritesTag()}" />'> Add To Favorites </a></td>
